@@ -1,7 +1,7 @@
 [![Unix CI badge](https://github.com/micropython/micropython/actions/workflows/ports_unix.yml/badge.svg)](https://github.com/micropython/micropython/actions?query=branch%3Amaster+event%3Apush) [![STM32 CI badge](https://github.com/micropython/micropython/actions/workflows/ports_stm32.yml/badge.svg)](https://github.com/micropython/micropython/actions?query=branch%3Amaster+event%3Apush) [![Docs CI badge](https://github.com/micropython/micropython/actions/workflows/docs.yml/badge.svg)](https://docs.micropython.org/) [![codecov](https://codecov.io/gh/micropython/micropython/branch/master/graph/badge.svg?token=I92PfD05sD)](https://codecov.io/gh/micropython/micropython)
 
-The MicroPython project
-=======================
+# The MicroPython project!
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/micropython/micropython/master/logo/upython-with-micro.jpg" alt="MicroPython Logo"/>
 </p>
@@ -32,8 +32,7 @@ MicroPython also provides a set of MicroPython-specific modules to access
 hardware-specific functionality and peripherals such as GPIO, Timers, ADC,
 DAC, PWM, SPI, I2C, CAN, Bluetooth, and USB.
 
-Getting started
----------------
+## Getting started
 
 See the [online documentation](https://docs.micropython.org/) for the API
 reference and information about using MicroPython and information about how
@@ -53,8 +52,7 @@ the officially supported board from the
 see the [schematics and pinouts](http://github.com/micropython/pyboard) and
 [documentation](https://docs.micropython.org/en/latest/pyboard/quickref.html).
 
-Contributing
-------------
+## Contributing
 
 MicroPython is an open-source project and welcomes contributions. To be
 productive, please be sure to follow the
@@ -63,10 +61,10 @@ and the [Code Conventions](https://github.com/micropython/micropython/blob/maste
 Note that MicroPython is licenced under the MIT license, and all contributions
 should follow this license.
 
-About this repository
----------------------
+## About this repository
 
 This repository contains the following components:
+
 - [py/](py/) -- the core Python implementation, including compiler, runtime, and
   core library.
 - [mpy-cross/](mpy-cross/) -- the MicroPython cross-compiler which is used to turn scripts
@@ -84,8 +82,7 @@ You will also need bash, gcc, and Python 3.3+ available as the command `python3`
 (if your system only has Python 2.7 then invoke make with the additional option
 `PYTHON=python2`). Some ports (rp2 and esp32) additionally use CMake.
 
-Supported platforms & architectures
------------------------------------
+## Supported platforms & architectures
 
 MicroPython runs on a wide range of microcontrollers, as well as on Unix-like
 (including Linux, BSD, macOS, WSL) and Windows systems.
@@ -107,35 +104,34 @@ is an example of the absolute minimum configuration, and is used to keep
 track of the code size of the core runtime and VM.
 
 In addition, the following ports are provided in this repository:
- - [cc3200](ports/cc3200) -- Texas Instruments CC3200 (including PyCom WiPy).
- - [esp32](ports/esp32) -- Espressif ESP32 SoC (including ESP32S2, ESP32S3, ESP32C3).
- - [esp8266](ports/esp8266) -- Espressif ESP8266 SoC.
- - [mimxrt](ports/mimxrt) -- NXP m.iMX RT (including Teensy 4.x).
- - [nrf](ports/nrf) -- Nordic Semiconductor nRF51 and nRF52.
- - [pic16bit](ports/pic16bit) -- Microchip PIC 16-bit.
- - [powerpc](ports/powerpc) -- IBM PowerPC (including Microwatt)
- - [qemu-arm](ports/qemu-arm) -- QEMU-based Arm emulated target (for testing)
- - [qemu-riscv](ports/qemu-riscv) -- QEMU-based RISC-V emulated target (for testing)
- - [renesas-ra](ports/renesas-ra) -- Renesas RA family.
- - [rp2](ports/rp2) -- Raspberry Pi RP2040 (including Pico and Pico W).
- - [samd](ports/samd) -- Microchip (formerly Atmel) SAMD21 and SAMD51.
- - [stm32](ports/stm32) -- STMicroelectronics STM32 family (including F0, F4, F7, G0, G4, H7, L0, L4, WB)
- - [webassembly](ports/webassembly) -- Emscripten port targeting browsers and NodeJS.
- - [zephyr](ports/zephyr) -- Zephyr RTOS.
 
-The MicroPython cross-compiler, mpy-cross
------------------------------------------
+- [cc3200](ports/cc3200) -- Texas Instruments CC3200 (including PyCom WiPy).
+- [esp32](ports/esp32) -- Espressif ESP32 SoC (including ESP32S2, ESP32S3, ESP32C3).
+- [esp8266](ports/esp8266) -- Espressif ESP8266 SoC.
+- [mimxrt](ports/mimxrt) -- NXP m.iMX RT (including Teensy 4.x).
+- [nrf](ports/nrf) -- Nordic Semiconductor nRF51 and nRF52.
+- [pic16bit](ports/pic16bit) -- Microchip PIC 16-bit.
+- [powerpc](ports/powerpc) -- IBM PowerPC (including Microwatt)
+- [qemu-arm](ports/qemu-arm) -- QEMU-based Arm emulated target (for testing)
+- [qemu-riscv](ports/qemu-riscv) -- QEMU-based RISC-V emulated target (for testing)
+- [renesas-ra](ports/renesas-ra) -- Renesas RA family.
+- [rp2](ports/rp2) -- Raspberry Pi RP2040 (including Pico and Pico W).
+- [samd](ports/samd) -- Microchip (formerly Atmel) SAMD21 and SAMD51.
+- [stm32](ports/stm32) -- STMicroelectronics STM32 family (including F0, F4, F7, G0, G4, H7, L0, L4, WB)
+- [webassembly](ports/webassembly) -- Emscripten port targeting browsers and NodeJS.
+- [zephyr](ports/zephyr) -- Zephyr RTOS.
+
+## The MicroPython cross-compiler, mpy-cross
 
 Most ports require the [MicroPython cross-compiler](mpy-cross) to be built
-first.  This program, called mpy-cross, is used to pre-compile Python scripts
+first. This program, called mpy-cross, is used to pre-compile Python scripts
 to .mpy files which can then be included (frozen) into the
-firmware/executable for a port.  To build mpy-cross use:
+firmware/executable for a port. To build mpy-cross use:
 
     $ cd mpy-cross
     $ make
 
-External dependencies
----------------------
+## External dependencies
 
 The core MicroPython VM and runtime has no external dependencies, but a given
 port might depend on third-party drivers or vendor HALs. This repository
